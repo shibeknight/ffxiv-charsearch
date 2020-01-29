@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Header } from 'semantic-ui-react';
 
 class Layout extends Component {
   constructor(props) {
@@ -12,7 +13,9 @@ class Layout extends Component {
     const { children } = this.props;
     return (
       <div>
-        <header>Header goes here</header>
+        <header>
+          <Header />
+        </header>
         <div>
           <main>{children}</main>
         </div>
