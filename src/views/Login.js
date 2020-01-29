@@ -89,14 +89,12 @@ class Login extends Component {
     return (
       <div>
         <Grid
-          textAlign="center"
           style={{
             height: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: '450px', maxHeight: '450px', overflow: 'auto' }}>
             <Card
