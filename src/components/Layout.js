@@ -13,9 +13,7 @@ class Layout extends Component {
     const { children } = this.props;
     return (
       <div>
-        <header>
-          <Header />
-        </header>
+        <Header />
         <div>
           <main>{children}</main>
         </div>
