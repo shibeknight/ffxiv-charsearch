@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Header } from 'semantic-ui-react';
+import Header from './Header';
 
 class Layout extends Component {
   constructor(props) {
