@@ -9,6 +9,7 @@ import {
   Loader,
   Pagination,
   Card,
+  Container,
 } from 'semantic-ui-react';
 import api from '../utils/API';
 
@@ -134,7 +135,7 @@ class Login extends Component {
     }
 
     return (
-      <div>
+      <Container>
         <Grid
           style={{
             height: '100vh',
@@ -155,7 +156,7 @@ class Login extends Component {
             {section}
           </Grid.Column>
         </Grid>
-      </div>
+      </Container>
     );
   }
 }
