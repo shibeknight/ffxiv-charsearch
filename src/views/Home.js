@@ -20,7 +20,7 @@ class Home extends Component {
     const char = await api.charInfo('730968');
     console.log(char);
     this.setState({
-      charInfo: char.Caracter,
+      charInfo: char.data.Character,
       isLoading: false,
     });
   };
@@ -45,10 +45,8 @@ class Home extends Component {
                 ui={false}
               />
               <Card.Content>
-                <Card.Header>Matthew</Card.Header>
-                <Card.Meta>
-                  <span className="date">Joined in 2015</span>
-                </Card.Meta>
+                <Card.Header>{charInfo.Name}</Card.Header>
+                <Card.Meta>{charInfo.ActiveClassJob.Class.Name}</Card.Meta>
                 <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
               </Card.Content>
               <Card.Content extra>
