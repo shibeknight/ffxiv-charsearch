@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
-import { Grid, Header, Button, Segment, Image, Form, Loader, Feed, Card } from 'semantic-ui-react';
+import {
+  Grid,
+  Header,
+  Button,
+  Segment,
+  Image,
+  Form,
+  Loader,
+  Pagination,
+  Card,
+} from 'semantic-ui-react';
 import api from '../utils/API';
 
 class Login extends Component {
@@ -9,7 +19,6 @@ class Login extends Component {
     this.state = {
       items: [],
       active: 1,
-      itemsTotal: '',
       pages: '',
       searchValue: '',
       isLoading: false,
@@ -18,13 +27,14 @@ class Login extends Component {
   }
 
   searchItems = async value => {
-    console.log(value);
-    const chars = await api.searchChars(value);
+    const { active } = this.state;
+    const chars = await api.searchChars(value, active);
     console.log(chars);
     this.setState({
       items: chars.data.Results,
       isLoading: false,
       isReady: true,
+      pages: chars.data.Pagination.PageTotal,
     });
   };
 
@@ -35,6 +45,12 @@ class Login extends Component {
   handleSubmit = () => {
     const { searchValue } = this.state;
     this.setState({ isLoading: true });
+    this.searchItems(searchValue);
+  };
+
+  handlePagination = (e, { activePage }) => {
+    const { searchValue } = this.state;
+    this.setState({ active: activePage, isLoading: true });
     this.searchItems(searchValue);
   };
 
@@ -72,6 +88,7 @@ class Login extends Component {
               </Card>
             ))}
           </Card>
+          <Pagination activePage={active} totalPages={pages} onPageChange={this.handlePagination} />
         </>
       );
     } else {
@@ -111,7 +128,17 @@ class Login extends Component {
             justifyContent: 'center',
           }}
         >
-          <Grid.Column style={{ maxWidth: '450px', maxHeight: '450px' }}>{section}</Grid.Column>
+          <Grid.Column
+            style={{
+              maxWidth: '450px',
+              maxHeight: '450px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            {section}
+          </Grid.Column>
         </Grid>
       </div>
     );
