@@ -18,6 +18,7 @@ class Home extends Component {
 
   loadChar = async () => {
     const char = await api.charInfo('730968');
+    console.log(char);
     this.setState({
       charInfo: char.Caracter,
       isLoading: false,
@@ -36,7 +37,7 @@ class Home extends Component {
     } else {
       section = (
         <>
-          <Grid.Column mobile={16} tablet={10} computer={10}>
+          <Grid.Column mobile={16} tablet={6} computer={6}>
             <Card>
               <Image
                 src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
@@ -58,7 +59,7 @@ class Home extends Component {
               </Card.Content>
             </Card>
           </Grid.Column>
-          <Grid.Column mobile={16} tablet={6} computer={6}>
+          <Grid.Column mobile={16} tablet={10} computer={10}>
             <Segment>
               <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
             </Segment>
