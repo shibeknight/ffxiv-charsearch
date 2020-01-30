@@ -48,10 +48,19 @@ class Login extends Component {
     this.searchItems(searchValue);
   };
 
-  handlePagination = (e, { activePage }) => {
-    const { searchValue } = this.state;
+  handlePaginationChange = async (e, { activePage }) => {
     this.setState({ active: activePage, isLoading: true });
-    this.searchItems(searchValue);
+    const { searchValue, active } = this.state;
+    const chars = await api.searchChars(searchValue, active);
+    console.log(chars);
+    this.setState({
+      items: chars.data.Results,
+      isLoading: false,
+      isReady: true,
+      pages: chars.data.Pagination.PageTotal,
+    });
+
+    // this.searchItems(searchValue);
   };
 
   render() {
@@ -88,7 +97,11 @@ class Login extends Component {
               </Card>
             ))}
           </Card>
-          <Pagination activePage={active} totalPages={pages} onPageChange={this.handlePagination} />
+          <Pagination
+            activePage={active}
+            totalPages={pages}
+            onPageChange={this.handlePaginationChange}
+          />
         </>
       );
     } else {
