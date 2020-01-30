@@ -98,6 +98,8 @@ class Login extends Component {
             ))}
           </Card>
           <Pagination
+            pointing
+            secondary
             activePage={active}
             totalPages={pages}
             onPageChange={this.handlePaginationChange}
