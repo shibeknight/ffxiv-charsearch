@@ -38,7 +38,7 @@ class Home extends Component {
       section = (
         <>
           <Grid.Column mobile={16} tablet={6} computer={6}>
-            <Card>
+            <Card fluid>
               <Image
                 src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
                 wrapped
