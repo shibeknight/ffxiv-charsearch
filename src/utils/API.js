@@ -5,4 +5,8 @@ export default {
     const chars = await axios.get(`https://xivapi.com/character/search?name=${query}&page=${page}`);
     return chars;
   },
+  charInfo: async query => {
+    const char = await axios.get(`https://xivapi.com/character/${query}`);
+    return char;
+  },
 };
