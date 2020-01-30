@@ -29,7 +29,7 @@ class Home extends Component {
     let section;
     if (isLoading) {
       section = (
-        <Grid.Column mobile={16} tablet={16} computer={16}>
+        <Grid.Column mobile={16} tablet={16} computer={16} style={{ height: '50vh' }}>
           <Loader active size="massive" content="Loading..." />{' '}
         </Grid.Column>
       );
