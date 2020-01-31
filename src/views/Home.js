@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Image, Header, Container, Card, Icon, Loader } from 'semantic-ui-react';
+import { Grid, Segment, Image, Header, Container, Card, Loader } from 'semantic-ui-react';
 import api from '../utils/API';
 
 class Home extends Component {
