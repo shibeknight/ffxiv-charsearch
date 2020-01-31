@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, Header, Form, Image, Segment, Button } from 'semantic-ui-react';
 
 const LoginCard = props => {
@@ -25,6 +26,12 @@ const LoginCard = props => {
       </Form>
     </Card>
   );
+};
+
+LoginCard.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  searchValue: PropTypes.string.isRequired,
+  handleSearchChange: PropTypes.func.isRequired,
 };
 
 export default LoginCard;
