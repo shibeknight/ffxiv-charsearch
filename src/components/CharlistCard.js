@@ -31,7 +31,8 @@ const CharlistCard = props => {
 };
 
 CharlistCard.propTypes = {
-  characters: PropTypes.arrayOf.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  characters: PropTypes.array.isRequired,
 };
 
 export default CharlistCard;
