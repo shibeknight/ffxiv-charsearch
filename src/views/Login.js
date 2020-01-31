@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
-import {
-  Grid,
-  Header,
-  Button,
-  Segment,
-  Image,
-  Form,
-  Loader,
-  Pagination,
-  Card,
-  Container,
-} from 'semantic-ui-react';
+import { Grid, Header, Image, Loader, Pagination, Card, Container } from 'semantic-ui-react';
 import api from '../utils/API';
+import LoginCard from '../components/LoginCard';
 
 class Login extends Component {
   constructor(props) {
@@ -110,26 +100,11 @@ class Login extends Component {
     } else {
       section = (
         <>
-          <Card style={{ width: 'inherit', minHeight: '300px', justifyContent: 'space-evenly' }}>
-            <Header as="h2" color="teal" textAlign="center">
-              <Image src="https://react.semantic-ui.com/logo.png" /> Search for your character
-            </Header>
-            <Form size="large" onSubmit={this.handleSubmit}>
-              <Segment style={{ border: 'none', boxShadow: 'none' }}>
-                <Form.Input
-                  value={searchValue}
-                  onChange={this.handleSearchChange}
-                  fluid
-                  icon="user"
-                  iconPosition="left"
-                  placeholder="Character name"
-                />
-                <Button type="submit" color="teal" fluid size="large">
-                  Search
-                </Button>
-              </Segment>
-            </Form>
-          </Card>
+          <LoginCard
+            handleSubmit={this.handleSubmit}
+            searchValue={searchValue}
+            handleSearchChange={this.handleSearchChange}
+          />
         </>
       );
     }
