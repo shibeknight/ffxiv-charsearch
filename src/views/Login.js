@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Grid, Header, Image, Loader, Pagination, Card, Container } from 'semantic-ui-react';
+import { Grid, Loader, Pagination, Card, Container } from 'semantic-ui-react';
 import api from '../utils/API';
 import LoginCard from '../components/LoginCard';
+import CharlistCard from '../components/CharlistCard';
 
 class Login extends Component {
   constructor(props) {
@@ -66,28 +67,7 @@ class Login extends Component {
     } else if (isReady) {
       section = (
         <>
-          <Card
-            style={{
-              width: 'inherit',
-              minHeight: '300px',
-              maxHeight: '350px',
-              overflow: 'auto',
-              alignItems: 'center',
-            }}
-          >
-            <Header as="h2" color="teal" textAlign="center">
-              <Image src="https://react.semantic-ui.com/logo.png" /> Select your character
-            </Header>
-            {items.map(item => (
-              <Card key={item.ID} style={{ minHeight: '60px', margin: '0', width: '95%' }}>
-                <Card.Content>
-                  <Image floated="right" size="mini" src={item.Avatar} />
-                  <Card.Header>{item.Name}</Card.Header>
-                  <Card.Meta>{item.Server}</Card.Meta>
-                </Card.Content>
-              </Card>
-            ))}
-          </Card>
+          <CharlistCard characters={items} />
           <Pagination
             pointing
             secondary
