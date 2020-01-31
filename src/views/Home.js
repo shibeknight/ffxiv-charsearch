@@ -39,11 +39,7 @@ class Home extends Component {
         <>
           <Grid.Column mobile={16} tablet={6} computer={6}>
             <Card fluid>
-              <Image
-                src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
-                wrapped
-                ui={false}
-              />
+              <Image src={charInfo.Portrait} wrapped ui={false} />
               <Card.Content>
                 <Card.Header>{charInfo.Name}</Card.Header>
                 <Card.Meta>{charInfo.ActiveClassJob.Class.Name}</Card.Meta>
