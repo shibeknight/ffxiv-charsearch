@@ -43,14 +43,9 @@ class Home extends Component {
               <Card.Content>
                 <Card.Header>{charInfo.Name}</Card.Header>
                 <Card.Meta>{charInfo.ActiveClassJob.Class.Name}</Card.Meta>
-                <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
+                <Card.Description>Character title and Server</Card.Description>
               </Card.Content>
-              <Card.Content extra>
-                <a href="noref">
-                  <Icon name="user" />
-                  22 Friends
-                </a>
-              </Card.Content>
+              <Card.Content extra>{charInfo.Title.Name}</Card.Content>
             </Card>
           </Grid.Column>
           <Grid.Column mobile={16} tablet={10} computer={10}>
