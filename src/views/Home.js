@@ -37,14 +37,16 @@ class Home extends Component {
       );
     } else {
       section = (
-        <Grid.Column mobile={16} tablet={6} computer={6}>
-          <CharMainGrid charInfo={charInfo} />
+        <>
+          <Grid.Column mobile={16} tablet={6} computer={6}>
+            <CharMainGrid charInfo={charInfo} />
+          </Grid.Column>
           <Grid.Column mobile={16} tablet={10} computer={10}>
             <Segment>
               <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
             </Segment>
           </Grid.Column>
-        </Grid.Column>
+        </>
       );
     }
 
