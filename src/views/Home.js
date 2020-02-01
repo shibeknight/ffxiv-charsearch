@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Image, Header, Container, Card, Loader } from 'semantic-ui-react';
+import { Grid, Header, Container, Loader, Segment, Image } from 'semantic-ui-react';
 import api from '../utils/API';
+import CharMainGrid from '../components/CharMainGrid';
 
 class Home extends Component {
   constructor(props) {
@@ -36,24 +37,14 @@ class Home extends Component {
       );
     } else {
       section = (
-        <>
-          <Grid.Column mobile={16} tablet={6} computer={6}>
-            <Card fluid>
-              <Image src={charInfo.Portrait} wrapped ui={false} />
-              <Card.Content>
-                <Card.Header>{charInfo.Name}</Card.Header>
-                <Card.Meta>{charInfo.ActiveClassJob.Class.Name}</Card.Meta>
-                <Card.Description>Character title and Server</Card.Description>
-              </Card.Content>
-              <Card.Content extra>{charInfo.Title.Name}</Card.Content>
-            </Card>
-          </Grid.Column>
+        <Grid.Column mobile={16} tablet={6} computer={6}>
+          <CharMainGrid charInfo={charInfo} />
           <Grid.Column mobile={16} tablet={10} computer={10}>
             <Segment>
               <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
             </Segment>
           </Grid.Column>
-        </>
+        </Grid.Column>
       );
     }
 
