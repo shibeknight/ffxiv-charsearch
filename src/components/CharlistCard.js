@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import { Card, Header, Image } from 'semantic-ui-react';
 
 const CharlistCard = props => {
@@ -21,7 +22,9 @@ const CharlistCard = props => {
         <Card key={item.ID} style={{ minHeight: '60px', margin: '0', width: '95%' }}>
           <Card.Content>
             <Image floated="right" size="mini" src={item.Avatar} />
-            <Card.Header>{item.Name}</Card.Header>
+            <Card.Header>
+              <NavLink to={{ pathname: '/', state: item.ID }}>{item.Name}</NavLink>
+            </Card.Header>
             <Card.Meta>{item.Server}</Card.Meta>
           </Card.Content>
         </Card>

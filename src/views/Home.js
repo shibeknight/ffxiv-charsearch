@@ -18,7 +18,9 @@ class Home extends Component {
   }
 
   loadChar = async () => {
-    const char = await api.charInfo('730968');
+    const { location } = this.props;
+    console.log(`here it is ${location.state}`);
+    const char = await api.charInfo(location.state);
     console.log(char);
     this.setState({
       charInfo: char.data.Character,
