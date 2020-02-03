@@ -40,6 +40,14 @@ class Login extends Component {
     this.searchItems(searchValue);
   };
 
+  handleReturn = () => {
+    this.setState({
+      searchValue: '',
+      isReady: false,
+      isLoading: false,
+    });
+  };
+
   handlePaginationChange = async (e, { activePage }) => {
     this.setState({ active: activePage, isLoading: true });
     const { searchValue, active } = this.state;
@@ -67,7 +75,7 @@ class Login extends Component {
     } else if (isReady) {
       section = (
         <>
-          <CharlistCard characters={items} />
+          <CharlistCard characters={items} handleReturn={this.handleReturn} />
           <Pagination
             pointing
             secondary

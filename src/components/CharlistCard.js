@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import { Card, Header, Image } from 'semantic-ui-react';
+import { Card, Header, Image, Button, Icon } from 'semantic-ui-react';
 
 const CharlistCard = props => {
-  const { characters } = props;
+  const { characters, handleReturn } = props;
   return (
     <Card
       style={{
@@ -15,7 +15,7 @@ const CharlistCard = props => {
         alignItems: 'center',
       }}
     >
-      <Header as="h2" color="teal" textAlign="center">
+      <Header as="h2" color="teal" textAlign="center" style={{ paddingTop: '1.5vh' }}>
         <Image src="https://react.semantic-ui.com/logo.png" /> Select your character
       </Header>
       {characters.map(item => (
@@ -29,6 +29,13 @@ const CharlistCard = props => {
           </Card.Content>
         </Card>
       ))}
+      <Button
+        onClick={handleReturn}
+        color="teal"
+        style={{ minHeight: '3em', width: '75%', marginTop: '1vh', marginBottom: '1vh' }}
+      >
+        <Icon name="arrow left" />
+      </Button>
     </Card>
   );
 };
@@ -36,6 +43,7 @@ const CharlistCard = props => {
 CharlistCard.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   characters: PropTypes.array.isRequired,
+  handleReturn: PropTypes.func.isRequired,
 };
 
 export default CharlistCard;
