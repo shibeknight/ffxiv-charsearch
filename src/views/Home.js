@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Header, Container, Loader, Segment, Image } from 'semantic-ui-react';
 import api from '../utils/API';
 import CharMainGrid from '../components/CharMainGrid';
@@ -64,5 +65,17 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.string.isRequired,
+  }),
+};
+
+Home.defaultProps = {
+  location: {
+    pathname: '',
+  },
+};
 
 export default Home;
