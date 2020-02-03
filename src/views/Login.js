@@ -48,6 +48,7 @@ class Login extends Component {
     });
   };
 
+  // Need to fix pagination
   handlePaginationChange = async (e, { activePage }) => {
     this.setState({ active: activePage, isLoading: true });
     const { searchValue, active } = this.state;
@@ -59,8 +60,6 @@ class Login extends Component {
       isReady: true,
       pages: chars.data.Pagination.PageTotal,
     });
-
-    // this.searchItems(searchValue);
   };
 
   render() {
