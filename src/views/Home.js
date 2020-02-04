@@ -48,9 +48,14 @@ class Home extends Component {
       );
     } else if (error) {
       section = (
-        <Grid.Column mobile={16} tablet={16} computer={16} style={{ height: '50vh' }}>
+        <Grid.Column
+          mobile={16}
+          tablet={16}
+          computer={16}
+          style={{ height: '50vh', display: 'flex', justifyContent: 'center' }}
+        >
           <Header as="h2" color="teal">
-            Something bad happened...
+            Something bad happened... Go back to the search and look for your character!
           </Header>
         </Grid.Column>
       );
