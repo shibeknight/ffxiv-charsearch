@@ -23,7 +23,7 @@ const CharlistCard = props => {
           <Card.Content>
             <Image floated="right" size="mini" src={item.Avatar} />
             <Card.Header>
-              <NavLink to={{ pathname: '/', state: item.ID }}>{item.Name}</NavLink>
+              <NavLink to={{ pathname: '/home', state: item.ID }}>{item.Name}</NavLink>
             </Card.Header>
             <Card.Meta>{item.Server}</Card.Meta>
           </Card.Content>
