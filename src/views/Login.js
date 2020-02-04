@@ -21,7 +21,6 @@ class Login extends Component {
   searchItems = async value => {
     const { active } = this.state;
     const chars = await api.searchChars(value, active);
-    console.log(chars);
     this.setState({
       items: chars.data.Results,
       isLoading: false,
@@ -52,7 +51,6 @@ class Login extends Component {
     const { searchValue } = this.state;
     this.setState({ active: activePage, isLoading: true });
     const chars = await api.searchChars(searchValue, activePage);
-    console.log(chars);
     this.setState({
       items: chars.data.Results,
       isLoading: false,
