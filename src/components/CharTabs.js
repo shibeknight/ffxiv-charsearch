@@ -17,7 +17,7 @@ const panes = [
 ];
 
 const CharTabs = () => {
-  return <Tab menu={{ secondary: true, pointing: true }} panes={panes} />;
+  return <Tab menu={{ color: 'teal', secondary: true, pointing: true }} panes={panes} />;
 };
 
 export default CharTabs;

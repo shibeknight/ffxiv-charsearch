@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid, Header, Container, Loader, Segment, Image } from 'semantic-ui-react';
 import api from '../utils/API';
 import CharMainGrid from '../components/CharMainGrid';
+import CharTabs from '../components/CharTabs';
 
 class Home extends Component {
   constructor(props) {
@@ -44,9 +45,10 @@ class Home extends Component {
             <CharMainGrid charInfo={charInfo} />
           </Grid.Column>
           <Grid.Column mobile={16} tablet={10} computer={10}>
-            <Segment>
+            <CharTabs />
+            {/* <Segment>
               <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-            </Segment>
+            </Segment> */}
           </Grid.Column>
         </>
       );
