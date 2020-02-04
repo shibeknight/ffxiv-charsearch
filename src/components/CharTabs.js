@@ -3,15 +3,15 @@ import { Tab } from 'semantic-ui-react';
 
 const panes = [
   {
-    menuItem: 'Tab 1',
+    menuItem: 'Jobs',
     render: () => <Tab.Pane attached={false}>Tab 1 Content</Tab.Pane>,
   },
   {
-    menuItem: 'Tab 2',
+    menuItem: 'Free Company',
     render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane>,
   },
   {
-    menuItem: 'Tab 3',
+    menuItem: 'Minions/Mounts',
     render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
   },
 ];
