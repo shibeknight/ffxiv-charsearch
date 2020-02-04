@@ -15,10 +15,10 @@ class Header extends Component {
         <Menu.Item style={{ flexGrow: '1' }}>
           <img src="https://react.semantic-ui.com/logo.png" alt="placeholder" />
         </Menu.Item>
-        <Menu.Item name="home" link as={Link} to="/">
+        <Menu.Item name="home" link as={Link} to="/home">
           Home
         </Menu.Item>
-        <Menu.Item name="sign-in" link as={Link} to="/login">
+        <Menu.Item name="sign-in" link as={Link} to="/">
           Search
         </Menu.Item>
       </Menu>
