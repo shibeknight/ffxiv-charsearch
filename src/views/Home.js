@@ -24,7 +24,6 @@ class Home extends Component {
     const { location } = this.props;
     try {
       const char = await api.charInfo(location.state);
-      console.log(char);
       this.setState({
         charInfo: char.data.Character,
         isLoading: false,
