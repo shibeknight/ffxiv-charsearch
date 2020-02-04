@@ -48,11 +48,10 @@ class Login extends Component {
     });
   };
 
-  // Need to fix pagination
   handlePaginationChange = async (e, { activePage }) => {
+    const { searchValue } = this.state;
     this.setState({ active: activePage, isLoading: true });
-    const { searchValue, active } = this.state;
-    const chars = await api.searchChars(searchValue, active);
+    const chars = await api.searchChars(searchValue, activePage);
     console.log(chars);
     this.setState({
       items: chars.data.Results,
