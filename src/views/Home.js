@@ -66,7 +66,7 @@ class Home extends Component {
 
 Home.propTypes = {
   location: PropTypes.shape({
-    state: PropTypes.string.isRequired,
+    state: PropTypes.number.isRequired,
   }),
 };
 
