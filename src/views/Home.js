@@ -12,6 +12,7 @@ class Home extends Component {
     this.state = {
       charInfo: [],
       isLoading: true,
+      error: false,
     };
   }
 
@@ -21,21 +22,36 @@ class Home extends Component {
 
   loadChar = async () => {
     const { location } = this.props;
-    const char = await api.charInfo(location.state);
-    console.log(char);
-    this.setState({
-      charInfo: char.data.Character,
-      isLoading: false,
-    });
+    try {
+      const char = await api.charInfo(location.state);
+      console.log(char);
+      this.setState({
+        charInfo: char.data.Character,
+        isLoading: false,
+      });
+    } catch (ex) {
+      this.setState({
+        isLoading: false,
+        error: true,
+      });
+    }
   };
 
   render() {
-    const { charInfo, isLoading } = this.state;
+    const { error, charInfo, isLoading } = this.state;
     let section;
     if (isLoading) {
       section = (
         <Grid.Column mobile={16} tablet={16} computer={16} style={{ height: '50vh' }}>
           <Loader active size="massive" content="Loading..." />{' '}
+        </Grid.Column>
+      );
+    } else if (error) {
+      section = (
+        <Grid.Column mobile={16} tablet={16} computer={16} style={{ height: '50vh' }}>
+          <Header as="h2" color="teal">
+            Something bad happened...
+          </Header>
         </Grid.Column>
       );
     } else {
