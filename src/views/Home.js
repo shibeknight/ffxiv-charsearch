@@ -65,7 +65,7 @@ class Home extends Component {
             <CharMainGrid charInfo={charInfo} />
           </Grid.Column>
           <Grid.Column mobile={16} tablet={10} computer={10}>
-            <CharTabs />
+            <CharTabs charInfo={charInfo} />
           </Grid.Column>
         </>
       );
