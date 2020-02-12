@@ -15,7 +15,10 @@ const CharTabs = props => {
           <Container>
             <Grid stackable columns={3}>
               {charInfo.ClassJobs.map(item => (
-                <Grid.Column key={item.Job.ID} style={{ displa: 'flex', justifyContent: 'center' }}>
+                <Grid.Column
+                  key={item.Job.ID}
+                  style={{ display: 'flex', justifyContent: 'center' }}
+                >
                   <Card>
                     <Card.Content>
                       <Image
