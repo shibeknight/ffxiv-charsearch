@@ -8,7 +8,7 @@ const CharTabs = props => {
     {
       menuItem: 'Jobs',
       render: () => (
-        <Tab.Pane attached={false}>
+        <Tab.Pane attached={false} style={{ maxHeight: '630px', overflow: 'auto' }}>
           <Header as="h2" color="teal">
             Job Details
           </Header>
