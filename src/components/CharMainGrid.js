@@ -9,7 +9,9 @@ const CharMainGrid = props => {
       <Image src={charInfo.Portrait} wrapped ui={false} />
       <Card.Content>
         <Card.Header>{charInfo.Name}</Card.Header>
-        <Card.Meta>{charInfo.ActiveClassJob.Class.Name}</Card.Meta>
+        <Card.Meta style={{ textTransform: 'capitalize' }}>
+          {charInfo.ActiveClassJob.Class.Name}
+        </Card.Meta>
         <Card.Description>Character title and Server</Card.Description>
       </Card.Content>
       <Card.Content extra>{charInfo.Title.Name}</Card.Content>
