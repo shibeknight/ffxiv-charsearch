@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Tab, Container, Grid, Image, Header, Card } from 'semantic-ui-react';
+import { Tab, Header } from 'semantic-ui-react';
+import JobGrid from './JobGrid';
 
 const CharTabs = props => {
   const { charInfo } = props;
@@ -12,28 +13,7 @@ const CharTabs = props => {
           <Header as="h2" color="teal">
             Job Details
           </Header>
-          <Container>
-            <Grid stackable columns={3}>
-              {charInfo.ClassJobs.map(item => (
-                <Grid.Column
-                  key={item.Job.ID}
-                  style={{ display: 'flex', justifyContent: 'center' }}
-                >
-                  <Card>
-                    <Card.Content>
-                      <Image
-                        floated="right"
-                        size="mini"
-                        src={`https://xivapi.com${item.Job.Icon}`}
-                      />
-                      <Card.Header>{item.Job.Name}</Card.Header>
-                      <Card.Meta>{item.Level}</Card.Meta>
-                    </Card.Content>
-                  </Card>
-                </Grid.Column>
-              ))}
-            </Grid>
-          </Container>
+          <JobGrid charInfo={charInfo} />
         </Tab.Pane>
       ),
     },
