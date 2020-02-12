@@ -9,4 +9,8 @@ export default {
     const char = await axios.get(`https://xivapi.com/character/${query}?extended=1`);
     return char;
   },
+  fcInfo: async query => {
+    const fc = await axios.get(`https://xivapi.com/freecompany/${query}`);
+    return fc;
+  },
 };
