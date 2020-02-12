@@ -12,7 +12,7 @@ const JobGrid = props => {
             <Card>
               <Card.Content>
                 <Image floated="right" size="mini" src={`https://xivapi.com${item.Job.Icon}`} />
-                <Card.Header>{item.Job.Name}</Card.Header>
+                <Card.Header style={{ textTransform: 'capitalize' }}>{item.Job.Name}</Card.Header>
                 <Card.Meta>{item.Level}</Card.Meta>
               </Card.Content>
             </Card>
