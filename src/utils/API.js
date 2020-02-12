@@ -10,7 +10,7 @@ export default {
     return char;
   },
   fcInfo: async query => {
-    const fc = await axios.get(`https://xivapi.com/freecompany/${query}`);
+    const fc = await axios.get(`https://xivapi.com/freecompany/${query}?data=FCM`);
     return fc;
   },
 };
