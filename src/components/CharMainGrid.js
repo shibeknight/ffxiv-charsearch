@@ -12,7 +12,7 @@ const CharMainGrid = props => {
         <Card.Meta style={{ textTransform: 'capitalize' }}>
           {charInfo.ActiveClassJob.Job.Name}
         </Card.Meta>
-        <Card.Description>Character title and Server</Card.Description>
+        <Card.Description>{charInfo.Server}</Card.Description>
       </Card.Content>
       <Card.Content extra>{charInfo.Title.Name}</Card.Content>
     </Card>
