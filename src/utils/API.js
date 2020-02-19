@@ -6,7 +6,7 @@ export default {
     return chars;
   },
   charInfo: async query => {
-    const char = await axios.get(`https://xivapi.com/character/${query}?extended=1`);
+    const char = await axios.get(`https://xivapi.com/character/${query}?extended=1&data=CJ`);
     return char;
   },
   fcInfo: async query => {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Header } from 'semantic-ui-react';
 import JobGrid from './JobGrid';
+import FcDetails from './FcDetails';
 
 const CharTabs = props => {
   const { charInfo } = props;
@@ -24,6 +25,7 @@ const CharTabs = props => {
           <Header as="h2" color="teal">
             Company Details
           </Header>
+          <FcDetails />
         </Tab.Pane>
       ),
     },
