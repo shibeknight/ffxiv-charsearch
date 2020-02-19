@@ -19,7 +19,13 @@ const CharTabs = props => {
     },
     {
       menuItem: 'Free Company',
-      render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane>,
+      render: () => (
+        <Tab.Pane attached={false}>
+          <Header as="h2" color="teal">
+            Company Details
+          </Header>
+        </Tab.Pane>
+      ),
     },
     {
       menuItem: 'Minions/Mounts',
